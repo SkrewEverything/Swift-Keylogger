@@ -131,7 +131,7 @@ class Keylogger: CallBackFunctions
     
     func openHIDManager() -> IOReturn
     {
-        return IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone));//kIOHIDOptionsTypeSeizeDevice
+        return IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone));
     }
     
     func scheduleHIDLoop()
