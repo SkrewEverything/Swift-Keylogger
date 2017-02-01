@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04D2C4E71E41EB3500550C68 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D2C4E61E41EB3500550C68 /* IOKit.framework */; };
+		04D2C4E91E41EB3E00550C68 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D2C4E81E41EB3E00550C68 /* CoreFoundation.framework */; };
+		04D2C4ED1E41EB9D00550C68 /* CallBackFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4EA1E41EB9D00550C68 /* CallBackFunctions.swift */; };
+		04D2C4EE1E41EB9D00550C68 /* Keylogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4EB1E41EB9D00550C68 /* Keylogger.swift */; };
+		04D2C4EF1E41EB9D00550C68 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2C4EC1E41EB9D00550C68 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04D2C4D91E41EB2500550C68 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04D2C4DB1E41EB2500550C68 /* Keylogger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Keylogger; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D2C4E61E41EB3500550C68 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		04D2C4E81E41EB3E00550C68 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		04D2C4EA1E41EB9D00550C68 /* CallBackFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallBackFunctions.swift; sourceTree = "<group>"; };
+		04D2C4EB1E41EB9D00550C68 /* Keylogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keylogger.swift; sourceTree = "<group>"; };
+		04D2C4EC1E41EB9D00550C68 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04D2C4D81E41EB2500550C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D2C4E91E41EB3E00550C68 /* CoreFoundation.framework in Frameworks */,
+				04D2C4E71E41EB3500550C68 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D2C4D21E41EB2500550C68 = {
+			isa = PBXGroup;
+			children = (
+				04D2C4DD1E41EB2500550C68 /* Keylogger */,
+				04D2C4DC1E41EB2500550C68 /* Products */,
+				04D2C4E51E41EB3500550C68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04D2C4DC1E41EB2500550C68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04D2C4DB1E41EB2500550C68 /* Keylogger */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04D2C4DD1E41EB2500550C68 /* Keylogger */ = {
+			isa = PBXGroup;
+			children = (
+				04D2C4EA1E41EB9D00550C68 /* CallBackFunctions.swift */,
+				04D2C4EB1E41EB9D00550C68 /* Keylogger.swift */,
+				04D2C4EC1E41EB9D00550C68 /* main.swift */,
+			);
+			path = Keylogger;
+			sourceTree = "<group>";
+		};
+		04D2C4E51E41EB3500550C68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D2C4E81E41EB3E00550C68 /* CoreFoundation.framework */,
+				04D2C4E61E41EB3500550C68 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04D2C4DA1E41EB2500550C68 /* Keylogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "Keylogger" */;
+			buildPhases = (
+				04D2C4D71E41EB2500550C68 /* Sources */,
+				04D2C4D81E41EB2500550C68 /* Frameworks */,
+				04D2C4D91E41EB2500550C68 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keylogger;
+			productName = Keylogger;
+			productReference = 04D2C4DB1E41EB2500550C68 /* Keylogger */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04D2C4D31E41EB2500550C68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Skrew Everything";
+				TargetAttributes = {
+					04D2C4DA1E41EB2500550C68 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 04D2C4D61E41EB2500550C68 /* Build configuration list for PBXProject "Keylogger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04D2C4D21E41EB2500550C68;
+			productRefGroup = 04D2C4DC1E41EB2500550C68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04D2C4DA1E41EB2500550C68 /* Keylogger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04D2C4D71E41EB2500550C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D2C4ED1E41EB9D00550C68 /* CallBackFunctions.swift in Sources */,
+				04D2C4EE1E41EB9D00550C68 /* Keylogger.swift in Sources */,
+				04D2C4EF1E41EB9D00550C68 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04D2C4E01E41EB2500550C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04D2C4E11E41EB2500550C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		04D2C4E31E41EB2500550C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		04D2C4E41E41EB2500550C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04D2C4D61E41EB2500550C68 /* Build configuration list for PBXProject "Keylogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D2C4E01E41EB2500550C68 /* Debug */,
+				04D2C4E11E41EB2500550C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "Keylogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D2C4E31E41EB2500550C68 /* Debug */,
+				04D2C4E41E41EB2500550C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04D2C4D31E41EB2500550C68 /* Project object */;
+}
