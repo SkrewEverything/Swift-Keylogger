@@ -1,5 +1,6 @@
 # macOS Keylogger
 
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)]()
 
 It is a simple and easy to use keylogger for macOS. It is not meant to be malicious. There are only few keyloggers available for mac and none of them are in swift.
 
