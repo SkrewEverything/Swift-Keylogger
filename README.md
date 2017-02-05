@@ -4,6 +4,10 @@
 
 It is a simple and easy to use keylogger for macOS. It is not meant to be malicious. There are only few keyloggers available for mac and none of them are in swift.
 
+Another problem is with Apple high-level API's. I don't know the reason but Apple suddenly deprecates and removes the documentation of API's from it's website.
+
+So, I don't want to keep checking about the availability of their API's and changing my code frequently. That is the reason I went for low-level API which is using HID API.
+
 Most of the keyloggers available only logs keystrokes into a file without much information about on which app the keystrokes are generated.
 
 >Note: This keylogger doesn't capture secure input fields like passwords due to [`EnableSecureEventInput`](https://developer.apple.com/library/content/technotes/tn2150/_index.html)
