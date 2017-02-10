@@ -32,6 +32,11 @@ By default it creates folder where the executable is present.
 To change the path edit `bundlePathURL` in `Keylogger.swift`
 ##### All the data is grouped according to day in each folder.
 
+## Disclaimer
+If the use of this product causes the death of your firstborn or anyone, I'm not responsible ( no warranty, no liability, etc.)
+
+For technical people: It is only for educational purpose.
+
 
 ## Contributing
 
