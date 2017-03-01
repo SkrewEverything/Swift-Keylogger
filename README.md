@@ -21,7 +21,7 @@ Clone the repository and open the project in Xcode and build the project and run
 To be able to close the Terminal when Keylogger is running, use this command while running the executable.
 
 ```shell
-$ nohup Keylogger &
+$ nohup ./Keylogger &
 ```
 And you can quit the Terminal.
 
