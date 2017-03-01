@@ -16,6 +16,24 @@ Most of the keyloggers available only logs keystrokes into a file without much i
 
 Clone the repository and open the project in Xcode and build the project and run the executable.
 
+### To run it in the background
+
+To be able to close the Terminal when Keylogger is running, use this command while running the executable.
+
+```shell
+$ nohup Keylogger &
+```
+And you can quit the Terminal.
+
+### To quit/stop the Keylogger
+
+To quit the Keylogger, first find it's pid using `ps` and use `kill` to stop the keylogger.
+
+```shell
+$ ps -e | grep "Keylogger"
+$ kill -9 pid_of_keylogger_from_above_command
+```
+
 When it's run, it creates folder Data
 ```
 |--Keylogger
