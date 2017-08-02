@@ -56,9 +56,9 @@ class Keylogger
         let observer = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())
         
         /* App switching notification*/
-        NSWorkspace.shared().notificationCenter.addObserver(self,
+        NSWorkspace.shared.notificationCenter.addObserver(self,
                                                             selector: #selector(activatedApp),
-                                                            name: NSNotification.Name.NSWorkspaceDidActivateApplication,
+                                                            name: NSWorkspace.didActivateApplicationNotification,
                                                             object: nil)
          /* Connected and Disconnected Call Backs */
         IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
@@ -82,10 +82,10 @@ class Keylogger
         RunLoop.current.run()
     }
     
-    dynamic func activatedApp(notification: NSNotification)
+    @objc dynamic func activatedApp(notification: NSNotification)
     {
         if  let info = notification.userInfo,
-            let app = info[NSWorkspaceApplicationKey] as? NSRunningApplication,
+            let app = info[NSWorkspace.applicationUserInfoKey] as? NSRunningApplication,
             let name = app.localizedName
         {
             self.appName = name
