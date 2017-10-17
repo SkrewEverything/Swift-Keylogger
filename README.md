@@ -27,7 +27,7 @@ And you can quit the Terminal.
 
 ### To quit/stop the Keylogger
 
-To quit the Keylogger, first, find it's PID using `ps` and use `kill` to stop the keylogger.
+To quit the Keylogger, first, find its PID using `ps` and use `kill` to stop the keylogger.
 
 ```shell
 $ ps -e | grep "Keylogger"
