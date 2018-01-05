@@ -27,7 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		04D2C4DB1E41EB2500550C68 /* Keylogger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Keylogger; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D2C4DB1E41EB2500550C68 /* USRIDActivityTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = USRIDActivityTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D2C4E61E41EB3500550C68 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		04D2C4E81E41EB3E00550C68 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		04D2C4EA1E41EB9D00550C68 /* CallBackFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallBackFunctions.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		04D2C4DC1E41EB2500550C68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04D2C4DB1E41EB2500550C68 /* Keylogger */,
+				04D2C4DB1E41EB2500550C68 /* USRIDActivityTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04D2C4DA1E41EB2500550C68 /* Keylogger */ = {
+		04D2C4DA1E41EB2500550C68 /* USRIDActivityTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "Keylogger" */;
+			buildConfigurationList = 04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "USRIDActivityTest" */;
 			buildPhases = (
 				04D2C4D71E41EB2500550C68 /* Sources */,
 				04D2C4D81E41EB2500550C68 /* Frameworks */,
@@ -99,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = Keylogger;
+			name = USRIDActivityTest;
 			productName = Keylogger;
-			productReference = 04D2C4DB1E41EB2500550C68 /* Keylogger */;
+			productReference = 04D2C4DB1E41EB2500550C68 /* USRIDActivityTest */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +133,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04D2C4DA1E41EB2500550C68 /* Keylogger */,
+				04D2C4DA1E41EB2500550C68 /* USRIDActivityTest */,
 			);
 		};
 /* End PBXProject section */
@@ -289,7 +289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "Keylogger" */ = {
+		04D2C4E21E41EB2500550C68 /* Build configuration list for PBXNativeTarget "USRIDActivityTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04D2C4E31E41EB2500550C68 /* Debug */,

@@ -20,7 +20,6 @@ class Keylogger
     var keyData:URL                             // Folder
     var devicesData:URL                         // Folder
 
-
     init()
     {
         appData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("App") // Creates App Folder in Data Folder
@@ -79,13 +78,15 @@ class Keylogger
                                                           object: nil)
         /* Connected and Disconnected Call Backs */
         // We can ignore these if we are not tracking which device is in use at any point.
-        // TODO: In future we may decide to give the user a choice of devices whose activity will disable locking.
-        // IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
-        //
-        // IOHIDManagerRegisterDeviceRemovalCallback(manager, CallBackFunctions.Handle_DeviceRemovalCallback, observer)
+        // TODO: In future we may decide to give the user a choice of devices whose activity will disable locking,
+        // and in that case we will need to collect the device names.
+//         IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
+//
+//         IOHIDManagerRegisterDeviceRemovalCallback(manager, CallBackFunctions.Handle_DeviceRemovalCallback, observer)
 
         /* Input value Call Backs */
-        IOHIDManagerRegisterInputValueCallback(manager, CallBackFunctions.Handle_IOHIDInputValueCallback, observer);
+        // IOHIDManagerRegisterInputValueCallback(manager, CallBackFunctions.Handle_IOHIDInputValueCallback, observer);
+        IOHIDManagerRegisterInputValueCallback(manager, CallBackFunctions.Handle_IOHIDInputValueCallbackUSRID, observer);
 
         // IOHIDManagerRegisterInputReportCallback(manager, CallBackFunctions.Handle_IOHIDInputReportCallback, observer);
 
@@ -99,6 +100,8 @@ class Keylogger
         /* Scheduling the loop */
         scheduleHIDLoop()
 
+        CallBackFunctions.startActivityCheck()
+        
         /* Running in Loop */
         RunLoop.current.run()
     }
