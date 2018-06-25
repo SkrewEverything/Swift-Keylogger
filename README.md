@@ -1,6 +1,6 @@
 # macOS Keylogger
 
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
+[![Backers on Open Collective](https://opencollective.com/Swift-Keylogger/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Swift-Keylogger/sponsors/badge.svg)](#sponsors) [![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg)]()
 
 It is a simple and easy to use keylogger for macOS. It is not meant to be malicious. There are only few keyloggers available for Mac and none of them are in Swift.
 
@@ -67,4 +67,34 @@ MIT
 
 
 **Free Software, Hell Yeah!**
+
+
+## Contributors
+
+This project exists thanks to all the people who contribute. 
+<a href="graphs/contributors"><img src="https://opencollective.com/Swift-Keylogger/contributors.svg?width=890&button=false" /></a>
+
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Swift-Keylogger#backer)]
+
+<a href="https://opencollective.com/Swift-Keylogger#backers" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/backers.svg?width=890"></a>
+
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Swift-Keylogger#sponsor)]
+
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/1/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/2/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/3/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/4/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/5/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/6/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/7/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/Swift-Keylogger/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Swift-Keylogger/sponsor/9/avatar.svg"></a>
+
 
